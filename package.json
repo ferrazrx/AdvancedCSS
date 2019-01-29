@@ -1,0 +1,22 @@
+{
+  "name": "advancedcss",
+  "version": "1.0.0",
+  "description": "Sass Compiler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferrazrx/AdvancedCSS.git"
+  },
+  "author": "Gail Lee, AJ Dirks, Rafael Ferraz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferrazrx/AdvancedCSS/issues"
+  },
+  "homepage": "https://github.com/ferrazrx/AdvancedCSS#readme",
+  "devDependencies": {
+    "sass": "^1.16.1"
+  }
+}
