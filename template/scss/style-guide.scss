@@ -1,6 +1,14 @@
 
 @import 'partials/prefix-mixins';
 @import 'partials/layout'; // responsive grid and media queries
+@font-face {
+	font-family: "Nexa Light";
+	src: url("../assets/fonts/Nexa Light.otf");
+}
+@font-face {
+	font-family: "Futura Bold";
+	src: url("../assets/fonts/FuturaLT-Bold.ttf");
+}
 
 // color palette - these colors will be the color swatches of the Colors section
 
@@ -18,8 +26,8 @@ $alert: $color-3;  // red
 
 // fonts
 
-$primary-font: 'Merriweather', serif;
-$secondary-font: 'Open Sans', sans-serif;
+$primary-font: 'Nexa Light', serif;
+$secondary-font: 'Futura Bold', sans-serif;
 
 /* -------------------------------- 
 

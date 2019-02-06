@@ -351,24 +351,38 @@ section {
 
 /* xBranding section - basic style */
 
-.cd-branding {
-	.cd-box-container{
+.cd-box-container{
+	display: flex;
+
+	img{
+		width: 100%;
+	}
+}
+
+.cd-box {
+	flex: 1 0 auto;
+	margin-bottom: 1em;
+
+	&--background {
+
+		background: $color-1;
+	}
+
+	&-wireframes{
 		display: flex;
 
-		img{
-			width: 100%;
+		figure{
+			flex: 0 1 auto;
+		}
+		figcaption{
+			text-align: center;
 		}
 	}
-	
-	.cd-box {
-		flex: 1 0 auto;
-		margin-bottom: 1em;
+}
 
-		&--background {
+.cd-branding {
 	
-			background: $color-1;
-		}
-	}
+	
 	
 
 	img {

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Nexa Light";
+  src: url("../assets/fonts/Nexa Light.otf");
+}
+@font-face {
+  font-family: "Futura Bold";
+  src: url("../assets/fonts/FuturaLT-Bold.ttf");
+}
 /* -------------------------------- 
 
 xBackground 
@@ -119,7 +127,7 @@ xTypography
 
 -------------------------------- */
 h1, h2 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Futura Bold", sans-serif;
   color: #083643;
 }
 
@@ -183,7 +191,7 @@ xButtons
   box-shadow: none;
   border-radius: 0.25em;
   font-size: 1.4rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Futura Bold", sans-serif;
   color: #ffffff;
   padding: 0.6em 2.2em;
   cursor: pointer;
@@ -388,7 +396,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Merriweather", serif;
+  font-family: "Nexa Light", serif;
 }
 
 a {
@@ -400,7 +408,7 @@ img {
 }
 
 input, textarea, select {
-  font-family: "Merriweather", serif;
+  font-family: "Nexa Light", serif;
   font-size: 1.6rem;
 }
 
@@ -753,19 +761,30 @@ section:nth-of-type(10) h2::before {
 }
 
 /* xBranding section - basic style */
-.cd-branding .cd-box-container {
+.cd-box-container {
   display: flex;
 }
-.cd-branding .cd-box-container img {
+.cd-box-container img {
   width: 100%;
 }
-.cd-branding .cd-box {
+
+.cd-box {
   flex: 1 0 auto;
   margin-bottom: 1em;
 }
-.cd-branding .cd-box--background {
+.cd-box--background {
   background: #476C5E;
 }
+.cd-box-wireframes {
+  display: flex;
+}
+.cd-box-wireframes figure {
+  flex: 0 1 auto;
+}
+.cd-box-wireframes figcaption {
+  text-align: center;
+}
+
 .cd-branding img {
   display: block;
   width: 100%;
