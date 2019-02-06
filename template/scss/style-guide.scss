@@ -4,11 +4,12 @@
 
 // color palette - these colors will be the color swatches of the Colors section
 
-$color-1: #5f8ee4; // Cornflower Blue - Action color
-$color-2: #19191a; // Dark Blue
-$color-3: #e4655f; // Red
-$color-4: #e6e6e6; // light grey
+$color-1: #476C5E; // Cornflower Blue - Action color
+$color-2: #083643;// Dark Blue
+$color-3: #B8ECD7;// Red
+$color-4: #B1E001; // light grey
 $color-5: #ffffff; // white
+$color-6: #CEF09D; // Green
 
 // additional colors
 
@@ -77,7 +78,7 @@ header {
 
 	@include MQ(M) {
 		li a {
-			color: lighten($color-2, 40%);
+			color: $color-5;
 
 			&.selected {
 				color: $color-5;

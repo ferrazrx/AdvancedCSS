@@ -64,6 +64,7 @@ header {
 		display: block;
 		top: 50%;
 		left: 50%;
+		height: 100%;
 		@include transform(translateX(-50%) translateY(-50%));
 	}
 
@@ -351,10 +352,24 @@ section {
 /* xBranding section - basic style */
 
 .cd-branding {
+	.cd-box-container{
+		display: flex;
 
-	.cd-box {
-		margin-bottom: 1em;
+		img{
+			width: 100%;
+		}
 	}
+	
+	.cd-box {
+		flex: 1 0 auto;
+		margin-bottom: 1em;
+
+		&--background {
+	
+			background: $color-1;
+		}
+	}
+	
 
 	img {
 		display: block;
