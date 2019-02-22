@@ -5,3 +5,40 @@
     AJ Dirks
     Rafael Ferraz
 */
+// DO NOT ADD ANY RULE IN THIS FILE, JUST IMPORTS!!!
+
+/*******************************************************
+Starter - Zen Garden Starter CSS
+********************************************************/
+//@import './starter.scss';
+
+/*******************************************************
+Variables - Define all the variables
+********************************************************/
+@import './partials/variables/layout'; 
+@import './partials/variables/colors'; 
+@import './partials/variables/fonts'; 
+
+/*******************************************************
+Mixins - Define the reusable parts for the web page
+********************************************************/
+@import './partials/mixins/media-queries'; 
+@import './partials/mixins/grid';
+@import './partials/mixins/clearfix'; 
+@import './partials/mixins/font-size'; 
+
+/*******************************************************
+Normalize - Normalize CSS reset
+********************************************************/
+@import './partials/globals/normalize';
+
+/*******************************************************
+Fonts - Define the fonts for the web page
+********************************************************/
+@import './partials/fonts/font-faces'; 
+@import './partials/fonts/fonts'; 
+
+/*******************************************************
+Layout - Define the main layout for the web page
+********************************************************/
+@import './partials/layout/layout'; 

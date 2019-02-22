@@ -1,0 +1,10 @@
+// breakpoints
+$S:     768px;   
+$M:     1024px;     
+$L:     1600px;  
+
+// columns variables
+$number-of-columns: 12;
+$one-column: 100% / $number-of-columns;
+$loop-start: 1;
+$loop-end: $number-of-columns + 1;
