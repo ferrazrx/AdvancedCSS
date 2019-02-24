@@ -3,6 +3,12 @@ $S:     768px;
 $M:     1024px;     
 $L:     1600px;  
 
+$max-page-width: 1024px;
+
+$ball-size-small: 390px;
+$ball-size-medium: 460px;
+$ball-size-large: 0;
+
 // columns variables
 $number-of-columns: 12;
 $one-column: 100% / $number-of-columns;

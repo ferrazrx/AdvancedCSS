@@ -1,0 +1,23 @@
+.sidebar{
+    order: 2;
+    margin-top: 1em;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 2em;
+    @include font-size(0.75);
+    position: relative;
+
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include MQ(S){
+       @include font-size(1.1);
+       margin-top: calc((100vh / 2));
+       display: flex;
+       justify-content: flex-end;
+       margin-left: auto;
+    }
+}

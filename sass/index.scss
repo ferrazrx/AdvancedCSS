@@ -33,6 +33,11 @@ Normalize - Normalize CSS reset
 @import './partials/globals/normalize';
 
 /*******************************************************
+Global - Global css
+********************************************************/
+@import './partials/globals/globals';
+
+/*******************************************************
 Fonts - Define the fonts for the web page
 ********************************************************/
 @import './partials/fonts/font-faces'; 
@@ -41,4 +46,7 @@ Fonts - Define the fonts for the web page
 /*******************************************************
 Layout - Define the main layout for the web page
 ********************************************************/
-@import './partials/layout/layout'; 
+@import './partials/layout/intro-layout';
+@import './partials/layout/main-layout'; 
+@import './partials/layout/sidebar-layout'; 
+@import './partials/layout/page-wrapper-layout'; 
