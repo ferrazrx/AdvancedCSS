@@ -532,6 +532,7 @@ Layout - Define the main layout for the web page
   font-size: 7.5px;
   font-size: 0.75rem;
   position: relative;
+  background-color: red;
 }
 .sidebar ul {
   list-style: none;

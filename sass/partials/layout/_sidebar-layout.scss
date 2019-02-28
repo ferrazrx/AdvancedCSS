@@ -6,6 +6,7 @@
     padding: 2em;
     @include font-size(0.75);
     position: relative;
+    background-color: $color-7;
 
     ul{
         list-style: none;
