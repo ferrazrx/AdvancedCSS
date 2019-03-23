@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import 'variables';
+@import 'main_title';
+@import 'index_grid';
+
+@import url($body_font_path);
+* {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: $body_font_family;
+}
+
+@import 'media_component';

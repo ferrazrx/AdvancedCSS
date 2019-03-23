@@ -1,0 +1,103 @@
+// *** Info box: should allow for details to be placed center, right, or left.  And on the top or bottom of the image. Bottom/left is default
+// ***REQUIRES: breakpoint mixin to work.
+// ***USAGE:
+// <div class="media-box right|center|top">
+//   <a href="#"> <!-- optional anchor if component will be a link -->
+//      <picture>
+//          <source  media="(min-width: 1080px)" srcset=" images/winter-trees-portrait-608.jpg" >
+//          <img src="images/winter-trees-portrait-304.jpg" alt="image of winter trees" >
+//      </picture>
+
+//      <div>
+//          <h2>06 &#8212; 19</h2>
+//         <p>Trees <span>Lightly Frosted with Snow</span></p>
+//      </div>
+//    </a>
+//</div>
+
+$aspect-ratio: 0.75; // width/height for the images I want to use.
+
+.media-box {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  align-items: flex-start;
+  // the following classes are to modify the base behavior and move the text block to different areas.
+  &.right {
+    align-items: flex-end;
+  }
+  &.center {
+    align-items: center;
+  }
+  &.top > div {
+    @include breakpoint(medium) {
+      order: -1; // On small screens top should be bottom
+    }
+  }
+
+  div {
+    // these styles are for the text blocks
+    transition: all 0.5s;
+    h2 {
+      font-size: 2em;
+      margin: 0;
+      margin-bottom: -0.7em;
+    }
+    p > span {
+      display: block;
+    }
+  }
+  img {
+    max-height: calc(
+      100vw *#{$aspect-ratio}
+    ); //this is to keep the height of portrait images the same as a landscape
+    @include breakpoint(medium) {
+      max-height: calc(25vw *#{$aspect-ratio});
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover > div {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.media-box:nth-of-type(1){
+  grid-column: 2 / span 3;
+  grid-row: 1;
+
+  @include breakpoint(medium){
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+.media-box:nth-of-type(2){
+  grid-column: 1 / span 4;
+  grid-row: 2;
+
+  @include breakpoint(medium){
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+.media-box:nth-of-type(3){
+  grid-column: 1 / span 3;
+  grid-row: 3;
+
+  @include breakpoint(medium){
+    grid-column: 4;
+    grid-row: 1;
+  }
+}
+.media-box:nth-of-type(4){
+  grid-column: 1 / span 4;
+  grid-row: 4;
+
+  @include breakpoint(medium){
+    grid-column: 4;
+    grid-row: 3;
+  }
+}

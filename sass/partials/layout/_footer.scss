@@ -1,0 +1,21 @@
+footer{
+    grid-column: 1;
+    background-color: $color-5;
+    padding: 2%;
+    text-align: center;
+    grid-row: 5;
+
+    @include MQ(S){
+        grid-row: 3;
+        grid-column: 1 / span 4;
+    }
+
+    a{
+        background-color: $color-2;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-weight: 900;
+        color: #FFF;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.5)
+    }
+}

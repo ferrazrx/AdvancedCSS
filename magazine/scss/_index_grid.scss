@@ -1,0 +1,8 @@
+.index-grid{
+    display: grid;
+    grid-template-columns: 40% 10% 10% 40%;
+
+    @include breakpoint(medium){
+        grid-template-columns: 30% 25% 20% 25%;
+    }
+}

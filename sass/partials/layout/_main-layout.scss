@@ -1,16 +1,59 @@
 .main{
-    padding: 1.5em;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:  100vh 100vh 100vh 60vh 50px;
+    grid-row: 2 / span 3;
+    grid-column: 1 / span 4;
+    position: relative;
     order: 3;
-    height: 100%;
-    margin-top: 3em;
+    width: 100%;
+    height: 200vh;
 
+    @include MQ(S){
+        grid-template-columns:  25% 25% 25% 25%;
+        grid-template-rows:  100vh 100vh;
+        grid-row: 2 / span 2;
+    }
     @include font-size(0.75);
 
-    h3{
-        border: 1px solid black;
-        padding: 1em;
-        display: inline;
+    &:before{
+        display: block;
+        content: "";
+        background-image: url('./assets/img/main_bg.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 4;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+
+        @include MQ(S){
+            grid-row: 1;
+        }
     }
+
+    &:after{
+        display: block;
+        content: "";
+        background-image: url('./assets/img/main2_bg.jpg');
+        background-size: cover;
+        grid-row: 3;
+        grid-column: 1;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-attachment: fixed;
+        z-index: -1;
+        filter: opacity(40%);
+
+        @include MQ(S){
+            grid-row: 2;
+            grid-column: 1 / span 4;
+        }
+    }
+    
     p{
         &:first-of-type{
             margin-top: 3em;
@@ -24,5 +67,143 @@
 
     @include MQ(S){
         @include font-size(1.15);
+    }
+
+    .explanation{
+        width: 95vw;
+        max-width: $ball-size-small;
+        height: calc(95vw);
+        max-height: $ball-size-small;
+        text-align: left; 
+        padding: 5em 3em;
+        border-radius: 50%;
+        text-align: center;  
+        overflow-wrap: break-word;
+        @include font-size(0.8);
+        grid-column: 1;
+        grid-row: 1;
+        background-color: $color-4;
+        position: relative;
+        top: 100%;
+        transform: translateY(-100%);
+        justify-self: center;
+
+
+        @include MQ(S){
+            grid-column: 3 /span 2;
+            @include font-size(0.9);
+            justify-self: center;
+            top: 95%;
+            max-width: $ball-size-medium;
+            max-height: $ball-size-medium;
+        }
+
+        h3{
+            padding: 0.4em 0.1em;
+            display: inline;
+            background-color: $color-1;
+            color: $color-5;
+            position: absolute;
+            top: 5%;
+            right: 50%;
+            transform: translateX(50%);
+            @include font-size(1);
+
+            @include MQ(S){
+                @include font-size(2);
+                width: 100%;
+                top: -5%;
+            }
+        }
+    }
+    .participation{
+        grid-column: 1;
+        grid-row: 2;
+        padding: 22% 15%;
+        background-color: $color-1;
+        color: $color-5;
+        @include font-size(0.9);
+
+        @include MQ(S){
+            grid-row: 2;
+            @include font-size(1);
+        }
+        
+        a{
+            color: $color-5;
+        }
+       
+        h3{
+            color:#CEF09D;
+            text-align: center;
+            width: 100%;
+            @include font-size(2);
+        }
+    }
+    .requirements{
+        grid-column: 1;
+        grid-row: 3;
+        padding: 10%;
+        @include font-size(0.8);
+        position: relative;
+        text-align: justify;
+
+        @include MQ(S){
+            grid-row: 2;
+            grid-column: 2 / span 3;
+            @include font-size(0.9);
+        }
+
+        h3{
+            background-color: #C88E66;
+            color: #FFF;
+            position: absolute;
+            padding: 2% 5%;
+            top: -2%;
+            right: 50%;
+            transform: translateX(50%);
+
+
+            @include font-size(2);
+
+            @include MQ(S){
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+        
+    }
+    .benefits{
+        width: 95vw;
+        max-width: $ball-size-small;
+        height: calc(95vw);
+        max-height: $ball-size-small;
+        position: absolute;
+        background-color: #C88E66;
+        border-radius: 50%;
+        padding: 2% 5%;
+        text-align: center;  
+        overflow-wrap: break-word;
+        margin: 1%;
+        grid-row: 4;
+        grid-column: 1;
+        justify-self: center;
+
+        @include font-size(1);
+
+        @include MQ(S){
+            grid-row: 2;
+            grid-column: 3 / span 2;
+            justify-self: end;
+            bottom: -5%;
+        }
+
+        h3{
+            color: #FFF;
+            @include font-size(1.6);
+            margin: 0;
+        }
+
+        
     }
 }
