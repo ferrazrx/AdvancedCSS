@@ -5,14 +5,14 @@
     position: relative;
 
 
-    @include MQ(S){
-        grid-template-columns: 50% 50%;
-        grid-row: 100vh 100vh 100vh;
+    @include MQ(M){
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: minmax(800px, 100vh) minmax(800px, 100vh) minmax(800px, 100vh);
     }
 
 
     @include MQ(M){
-        grid-template-columns: 25% 25% 25% 25%;
+       
     }
 
     &::before{

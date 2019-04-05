@@ -451,6 +451,29 @@ h1, h3 {
 }
 
 /*******************************************************
+Animations - Animation CSS
+********************************************************/
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+/*******************************************************
 Layout - Define the main layout for the web page
 ********************************************************/
 .intro {
@@ -458,8 +481,8 @@ Layout - Define the main layout for the web page
   grid-column: 1;
   justify-self: center;
   align-self: center;
-  max-width: 390px;
-  max-height: 390px;
+  max-width: 340px;
+  max-height: 340px;
   border-radius: 50%;
   text-align: center;
   overflow-wrap: break-word;
@@ -467,10 +490,11 @@ Layout - Define the main layout for the web page
   order: 1;
   margin: 0 auto;
   background-color: #083643;
+  animation: fade-in-right 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   font-size: 7.5px;
   font-size: 0.75rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .intro {
     font-size: 12.5px;
     font-size: 1.25rem;
@@ -517,7 +541,7 @@ Layout - Define the main layout for the web page
   color: #083643;
   position: relative;
   text-align: left;
-  top: 120%;
+  top: 150%;
   right: 50%;
   padding: 2em;
   text-align: center;
@@ -563,14 +587,14 @@ Layout - Define the main layout for the web page
   position: relative;
   order: 3;
   width: 100%;
-  height: 200vh;
+  height: 100%;
   font-size: 7.5px;
   font-size: 0.75rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main {
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100vh 100vh;
+    grid-template-rows: minmax(800px, 100vh) minmax(800px, 100vh);
     grid-row: 2/span 2;
   }
 }
@@ -583,11 +607,11 @@ Layout - Define the main layout for the web page
   grid-row: 1/span 2;
   grid-column: 1/span 4;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   z-index: -1;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main:before {
     grid-row: 1;
   }
@@ -600,13 +624,13 @@ Layout - Define the main layout for the web page
   grid-row: 3;
   grid-column: 1;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   background-attachment: fixed;
   z-index: -1;
-  filter: opacity(40%);
+  filter: opacity(60%);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main:after {
     grid-row: 2;
     grid-column: 1/span 4;
@@ -626,9 +650,9 @@ Layout - Define the main layout for the web page
 }
 .main .explanation {
   width: 95vw;
-  max-width: 390px;
+  max-width: 340px;
   height: calc(95vw);
-  max-height: 390px;
+  max-height: 340px;
   text-align: left;
   padding: 5em 3em;
   border-radius: 50%;
@@ -643,8 +667,19 @@ Layout - Define the main layout for the web page
   top: 100%;
   transform: translateY(-100%);
   justify-self: center;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: none;
 }
-@media only screen and (min-width: 768px) {
+.main .explanation:hover {
+  background-color: #083643;
+  color: #FFF;
+  transform: scale(1.1, 1.1) translateY(-100%);
+}
+.main .explanation:hover h3 {
+  background-color: #B1E001;
+  color: #083643;
+}
+@media only screen and (min-width: 1024px) {
   .main .explanation {
     grid-column: 3/span 2;
     font-size: 9px;
@@ -653,6 +688,7 @@ Layout - Define the main layout for the web page
     top: 95%;
     max-width: 480px;
     max-height: 480px;
+    display: block;
   }
 }
 .main .explanation h3 {
@@ -667,7 +703,7 @@ Layout - Define the main layout for the web page
   font-size: 10px;
   font-size: 1rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main .explanation h3 {
     font-size: 20px;
     font-size: 2rem;
@@ -678,17 +714,18 @@ Layout - Define the main layout for the web page
 .main .participation {
   grid-column: 1;
   grid-row: 2;
-  padding: 22% 15%;
+  padding: 10% 10%;
   background-color: #476C5E;
   color: #ffffff;
   font-size: 9px;
   font-size: 0.9rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main .participation {
     grid-row: 2;
     font-size: 10px;
     font-size: 1rem;
+    padding: 22% 15%;
   }
 }
 .main .participation a {
@@ -709,8 +746,10 @@ Layout - Define the main layout for the web page
   font-size: 0.8rem;
   position: relative;
   text-align: justify;
+  color: #FFF;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main .requirements {
     grid-row: 2;
     grid-column: 2/span 3;
@@ -729,17 +768,20 @@ Layout - Define the main layout for the web page
   font-size: 20px;
   font-size: 2rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .main .requirements h3 {
     right: 50%;
     transform: translateX(50%);
   }
 }
+.main .requirements a {
+  color: #FFF;
+}
 .main .benefits {
   width: 95vw;
-  max-width: 390px;
+  max-width: 340px;
   height: calc(95vw);
-  max-height: 390px;
+  max-height: 340px;
   position: absolute;
   background-color: #C88E66;
   border-radius: 50%;
@@ -750,15 +792,27 @@ Layout - Define the main layout for the web page
   grid-row: 4;
   grid-column: 1;
   justify-self: center;
+  z-index: 10;
   font-size: 10px;
   font-size: 1rem;
 }
-@media only screen and (min-width: 768px) {
+.main .benefits:hover {
+  transform: rotateY(360deg);
+  background-color: #476C5E;
+  transition: all 0.8s;
+  color: #FFF;
+}
+.main .benefits:hover h3 {
+  color: #083643;
+  background: #B1E001;
+  padding: 5%;
+}
+@media only screen and (min-width: 1024px) {
   .main .benefits {
     grid-row: 2;
     grid-column: 3/span 2;
     justify-self: end;
-    bottom: -5%;
+    bottom: 0;
   }
 }
 .main .benefits h3 {
@@ -783,8 +837,11 @@ Layout - Define the main layout for the web page
   font-size: 7.5px;
   font-size: 0.75rem;
   display: none;
+  animation: fade-in-top 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s;
+  animation-fill-mode: both;
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .sidebar {
     grid-column: 3/span 2;
     grid-row: 1;
@@ -797,6 +854,12 @@ Layout - Define the main layout for the web page
 }
 .sidebar a {
   color: #000;
+  transition: all 0.6s;
+}
+.sidebar a:hover {
+  background-color: #083643;
+  color: #FFF;
+  padding: 5px;
 }
 .sidebar ul {
   list-style: none;
@@ -810,15 +873,10 @@ Layout - Define the main layout for the web page
   grid-row: 100vh 100vh 100vh 100vh;
   position: relative;
 }
-@media only screen and (min-width: 768px) {
-  .page-wrapper {
-    grid-template-columns: 50% 50%;
-    grid-row: 100vh 100vh 100vh;
-  }
-}
 @media only screen and (min-width: 1024px) {
   .page-wrapper {
     grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: minmax(800px, 100vh) minmax(800px, 100vh) minmax(800px, 100vh);
   }
 }
 .page-wrapper::before {
@@ -835,24 +893,36 @@ Layout - Define the main layout for the web page
 
 footer {
   grid-column: 1;
-  background-color: #ffffff;
   padding: 2%;
   text-align: center;
   grid-row: 5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   footer {
-    grid-row: 3;
+    grid-row: 2;
     grid-column: 1/span 4;
+    width: auto;
   }
 }
 footer a {
-  background-color: #083643;
-  padding: 10px 15px;
+  display: inline-block;
+  padding: 5px 10px;
   text-decoration: none;
   font-weight: 900;
+  color: #083643;
+  font-weight: 100;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin: 1px;
+  transition: all 1s;
+  background: #FFF;
+}
+footer a:hover {
+  background-color: #083643;
   color: #FFF;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(1.2, 1.2);
 }
 
 /*# sourceMappingURL=style.css.map */

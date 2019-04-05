@@ -12,10 +12,12 @@
     order: 1;
     margin: 0 auto;
     background-color: $color-2;
+    animation: fade-in-right 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
 
      @include font-size(0.75);
 
-    @include MQ(S){
+    @include MQ(M){
         @include font-size(1.25);
         margin-top: calc((100vh / 2) - (#{$ball-size-large} / 2) - (1.5em) );
         margin: 0;
@@ -63,8 +65,8 @@
     .preamble{
 
         h3{
-            color:#B1E001;
-            background: #083643;
+            color: $color-4;
+            background: $color-2;
             padding: 5%;
             position: absolute;
             top: -25%;
@@ -82,7 +84,7 @@
         color: #083643;
         position: relative;
         text-align: left; 
-        top: 120%;
+        top: 150%;
         right: 50%;
         padding: 2em;
         text-align: center;  
